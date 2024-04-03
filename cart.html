@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="app.css">
+    <title>Shopping Cart</title>
+    <style>
+      .wp {
+           position: fixed;
+           bottom: 20px;
+           right: 20px;
+           z-index: 1000;
+       }
+
+       .chat-box {
+           position: relative;
+           cursor: pointer;
+       }
+
+       .chat-box img {
+           width: 80px;
+           margin-bottom: 10px;
+           display: none;
+       }
+
+       .chat-box img:first-child {
+           display: block;
+       }
+
+       .chat-box.active img:first-child {
+           display: none;
+       }
+
+       .chat-box.active img:nth-child(2) {
+           display: block;
+       }
+
+       .whatsapp-icon,
+       .text-message-icon,
+       .cross-icon {
+           width: 80px;
+           display: none;
+       }
+      
+       .whatsapp-icon.active,
+       .text-message-icon.active,
+       .cross-icon.active {
+           display: block;
+       }
+
+       .cross-icon {
+           padding-left: 4px;
+           position: absolute;
+           top: -30px; /* Adjust the top value as needed */
+           right: 28px;
+       }
+       </style>
+</head>
+
+<body>
+    <header>
+        <div class="overlay"></div>
+        <nav>
+            <h2>SMK</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li class="cart">
+                    <a href="cart.html">
+                        <ion-icon name="basket"></ion-icon>Cart<span>0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="products-container">
+        <div class="product-header">
+            <h5 class="product-title">PRODUCT</h5>
+            <h5 class="price">PRICE</h5>
+            <h5 class="quantity">QUANTITY</h5>
+            <h5 class="total">TOTAL()</h5>
+        </div>
+        <div class="products">
+        </div>
+    </div>
+    
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <form>
+        <div class="form-group"> <label>Have coupon?</label>
+            <div class="input-group"> <input type="text" class="form-control coupon" name="" placeholder="Coupon code"> <span class="input-group-append"> <button class="btn btn-primary btn-apply coupon">Apply</button> </span> </div>
+        </div>
+    </form>
+    <label for="cars">Choose a delivery method:</label>
+    <select id="Delivery" name="Collectiom" form="Deliveryform
+    ">
+        <option value="Delivery">Delivery</option>
+        <option value="Collection">Collection</option>
+    </select>
+    <!-- <script type="text/javascript"> -->
+      <script src="script.js"></script>
+
+      <div class="wp">
+         <div class="chat-box" onclick="toggleChatBox()">
+             <img id="chat-box-1" src="./images/chat-box-1.png" alt="Chat Box 1">
+             
+         </div>
+         <a href="https://wa.me/918210768015" class="whatsapp-icon">
+             <img src="./images/whatsapp.png" alt="WhatsApp">
+         </a>
+         <a href="sms:+918210768015" class="text-message-icon">
+             <img src="./images/chat-box-2.png" alt="Text Message">
+         </a>
+         <a href="#" class="cross-icon"  onclick="resetChatBox()"  style="background-color: lightblue; width: 30px;">
+             <img src="./images/close.png" alt="Cross" style="width: 20px; ">
+         </a>
+     </div>
+</body>
+</html>
+   
